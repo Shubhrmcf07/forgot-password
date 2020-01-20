@@ -7,8 +7,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service:'gmail',
     auth:{
-        user: 'shubhamsachdeva593@gmail.com',
-        pass: 'Shubh_rmcf07'
+        user: 'your-email',
+        pass: 'your-password'
     }
 });
 
@@ -17,8 +17,8 @@ var jwt = require('jwt-simple');
 var con = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'Shubh_rmcf07',
-	database: 'logistics'
+	password: 'your-password',
+	database: 'dbname'
 })
 
 var app = express();
@@ -48,7 +48,7 @@ app.post('/forgotpassword', (req, res)=>{
         var token = jwt.encode(payload, secret);
 
         var mailoptions = {
-            from: 'shubhamsachdeva593@gmail.com',
+            from: 'your-email',
             to: email,
             subject: 'eenie meenie mynie mo',
             text: '/resetpassword'+'/'+payload.id+'/'+token
