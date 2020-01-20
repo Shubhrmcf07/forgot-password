@@ -50,7 +50,7 @@ app.post('/forgotpassword', (req, res)=>{
         var mailoptions = {
             from: 'your-email',
             to: email,
-            subject: 'eenie meenie mynie mo',
+            subject: 'password-reset',
             text: '/resetpassword'+'/'+payload.id+'/'+token
         }
 
